@@ -22,6 +22,7 @@ end
 
 group :development do
   # gems to help you debug and develop better
+  gem 'annotate'
   gem 'quiet_assets'
   gem 'debugger'
   gem 'pry-rails'
