@@ -8,30 +8,33 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+# a different ruby-based web server than WEBBRICK
 gem 'thin'
 
 gem 'devise'
+gem 'bootstrap-sass'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-group :development, :test do
+group :development do
+  # gems to help you debug and develop better
   gem 'quiet_assets'
   gem 'debugger'
   gem 'pry-rails'
-  gem 'sqlite3'
-end
-
-group :development do
   gem "better_errors"
   gem "binding_of_caller"
+
+  gem 'sqlite3'
+  gem 'rails_layout'
 end
+
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
 
-ruby "2.0.0" # explicitly tell heroku to use ruby 2.0
+ruby File.read(".ruby-version").strip.split('-')[1] # explicitly tell heroku to use ruby 2.0
