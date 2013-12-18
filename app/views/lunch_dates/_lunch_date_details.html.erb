@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= lunch_date.title %>
+    </h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="lead">
+      <%= lunch_date.description %>
+    </p>
+
+    <p>Invited Guests</p>
+
+    <ul>
+      <% lunch_date.users.each do |user| %>
+        <%= user.email %>
+      <% end %>
+    </ul>
+  </div>
+</div>

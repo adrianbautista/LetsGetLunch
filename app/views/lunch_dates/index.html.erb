@@ -1,0 +1,5 @@
+<h1>Dashboard</h1>
+
+<% @lunch_dates.each do |lunch_date| %>
+  <%= render 'lunch_date_details', lunch_date: lunch_date %>
+<% end %>
