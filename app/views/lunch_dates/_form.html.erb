@@ -1,6 +1,6 @@
-<%= form_for lunch_date do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :description %>
-  <%= f.text_field :location %>
-  <%= f.submit "Lets Get Lunch!" %>
+<%= simple_form_for lunch_date do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.button :submit %>
 <% end %>
