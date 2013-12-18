@@ -1,4 +1,4 @@
-<%= simple_form_for lunch_date do |f| %>
+<%= simple_form_for lunch_date, remote: remote_status do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :location %>

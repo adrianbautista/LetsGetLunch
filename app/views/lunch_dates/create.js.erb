@@ -1,0 +1,4 @@
+$('.js-lunch-dates').empty();
+<% current_user.lunch_dates.each do |lunch_date| %>
+  $("<%= escape_javascript(render 'lunch_date_details', lunch_date: lunch_date ) %>").prependTo('.js-lunch-dates');
+<% end %>

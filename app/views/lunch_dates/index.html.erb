@@ -6,6 +6,12 @@
 
 <div class="row">
   <div class="col-md-12">
+    <%= render 'form', lunch_date: @new_lunch_date, remote_status: true %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 js-lunch-dates">
     <% @lunch_dates.each do |lunch_date| %>
       <%= render 'lunch_date_details', lunch_date: lunch_date %>
     <% end %>

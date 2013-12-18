@@ -4,6 +4,7 @@ class LunchDatesController < ApplicationController
 
   def index
     @lunch_dates = current_user.lunch_dates
+    @new_lunch_date = LunchDate.new
   end
 
   def new
@@ -13,10 +14,13 @@ class LunchDatesController < ApplicationController
   def create
     @lunch_date = LunchDate.new(safe_lunch_date_params)
     @lunch_date.users << current_user
-    if @lunch_date.save
-      redirect_to @lunch_date
-    else
-      render :new
+    respond_to do |format|
+      if @lunch_date.save
+        format.html { redirect_to @lunch_date, notice: 'created!' }
+        format.js { }
+      else
+        format.html { render :new }
+      end
     end
   end
 
