@@ -32,11 +32,3 @@ group :development do
   gem 'sqlite3'
   gem 'rails_layout'
 end
-
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
-ruby File.read(".ruby-version").strip.split('-')[1] # explicitly tell heroku to use ruby 2.0
